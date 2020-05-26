@@ -31,3 +31,7 @@ Create minicube cluster with two pods: web and frontend.
 1. Create manifest Service with ClusterIP in web-svc-cip.yaml
 2. Install MetalLB, create manifest which configures MetalLB in netallb-config.yaml, create manifest Service with LoadBalancer in web-svc-lb.yaml
 3. Install ingress controller ingress-nginx, create manifest for ingress-nginx in nginx-lb.yaml, create manifest for web service in web-svc-headless.yaml, create ingress rules in web-ingress.yaml
+
+## HW5
+1. Create manifest StatefulSet with MinIO in minio-statefulset.yaml, create manifest Headkess Service MinIO in minio-headless-service.yaml
+2. Create manifest with secrets for MinIO StatefulSet
