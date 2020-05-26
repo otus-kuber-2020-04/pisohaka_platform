@@ -26,3 +26,8 @@ Create minicube cluster with two pods: web and frontend.
   3. Give admin role in namespace dev to jane
   4. Create service_account ken in namespace dev
   5. Give view role in namespace dev to ken
+
+## HW4
+1. Create manifest Service with ClusterIP in web-svc-cip.yaml
+2. Install MetalLB, create manifest which configures MetalLB in netallb-config.yaml, create manifest Service with LoadBalancer in web-svc-lb.yaml
+3. Install ingress controller ingress-nginx, create manifest for ingress-nginx in nginx-lb.yaml, create manifest for web service in web-svc-headless.yaml, create ingress rules in web-ingress.yaml
