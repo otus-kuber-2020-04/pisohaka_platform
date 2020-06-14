@@ -1,0 +1,7 @@
+resources:
+- ../../base
+namePrefix: prod-
+namespace: hypster-shop-prod
+commonLabels:
+  environment: production
+  someName: bar

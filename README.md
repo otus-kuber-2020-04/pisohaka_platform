@@ -35,3 +35,16 @@ Create minicube cluster with two pods: web and frontend.
 ## HW5
 1. Create manifest StatefulSet with MinIO in minio-statefulset.yaml, create manifest Headkess Service MinIO in minio-headless-service.yaml
 2. Create manifest with secrets for MinIO StatefulSet
+
+## HW6
+1. Зарегистрировался в GCP
+2. Запустил k8s кластер в GCP
+3. Установил Helm3
+4. Установил и настроил nginx-ingress, cert-manager, chartmuseum, harbor
+5. Создал helm-chart для hipster-shop
+6. Вынес frontend в отдельный helm-chart, добавил его к зависимостям hipster-shop
+7. Создал helm-secret
+8. Вынес сервисы paymentservice и shippingservice для использования в kubecfg
+9. Создал service.jsonnet для генерации манифестов для paymentservice и shippingservice
+10. Вынес сервис recommendationservice для использования в kustomize
+11. Настроил kustomize для окружений dev и prod
