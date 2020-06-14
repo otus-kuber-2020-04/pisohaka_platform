@@ -35,3 +35,52 @@ Create minicube cluster with two pods: web and frontend.
 ## HW5
 1. Create manifest StatefulSet with MinIO in minio-statefulset.yaml, create manifest Headkess Service MinIO in minio-headless-service.yaml
 2. Create manifest with secrets for MinIO StatefulSet
+
+## HW6
+1. Зарегистрировался в GCP
+2. Запустил k8s кластер в GCP
+3. Установил Helm3
+4. Установил и настроил nginx-ingress, cert-manager, chartmuseum, harbor
+5. Создал helm-chart для hipster-shop
+6. Вынес frontend в отдельный helm-chart, добавил его к зависимостям hipster-shop
+7. Создал helm-secret
+8. Вынес сервисы paymentservice и shippingservice для использования в kubecfg
+9. Создал service.jsonnet для генерации манифестов для paymentservice и shippingservice
+10. Вынес сервис recommendationservice для использования в kustomize
+11. Настроил kustomize для окружений dev и prod
+
+
+
+Запустили кластер, установили helm
+Установили nginx-ingress, используя helm-3. Версия 1.11.1 не встала. Номер версии убрал
+Установили CRD для cert-manager, согласно докоментации, версии v0.15.1
+Установили cert-manager
+Дополнительно установили Issuer для тестирования - test-resources.yaml
+Проверили, что все ок.
+Создали Basic ACME Issuer - letsencryp-acme.yml - установил production сервер
+Модифицировал данные в volume.yaml для chartmuseum согласно описанию https://cert-manager.io/docs/usage/ingress/ и установил, сертификат подхватился.
+Работа с chartmuseum:
+helm repo add chartmuseum https://chartmuseum.35.238.80.184.nip.io
+для примера взял чарт cert-manager/
+helm plugin install https://github.com/chartmuseum/helm-push.git
+Включил api в values
+helm push cert-manager/ chartmuseum
+далее для установки helm install chartmuseum/cert-manager
+Harbor:
+взял values.yaml c гитхаба
+отключил notary
+добавил домен для core, подключил cert-manager
+уставновил harbor
+hipster-shop:
+Скачал all-hipster-shop.yaml
+Выпилил deployment, service, создал ingress для frontend
+Шаблонизировал, создал values.yaml
+Без шаблонизации выпилил redis, подключил как dependencies
+работу с secrets пропустил
+Положил в харбор hipster-shop/, frontend/, redis/
+kubecfg
+Скачал локально kube.libsonnet - поменял версию api а deployment на "apps/v1"
+восстановил работу сервисов
+kustomize
+вынес productcatalogservice
+kubectl apply -k kubernetes-templating/kustomize/overrides/hipster-shop -n hipster-shop # - вернул сервис обратно
