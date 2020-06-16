@@ -48,3 +48,8 @@ Create minicube cluster with two pods: web and frontend.
 9. Создал service.jsonnet для генерации манифестов для paymentservice и shippingservice
 10. Вынес сервис recommendationservice для использования в kustomize
 11. Настроил kustomize для окружений dev и prod
+
+## HW7
+1. Создал CustomResourceDefinition и CustomResource
+2. Создал оператор
+3. Создал оставшиеся файлы для установки оператора
