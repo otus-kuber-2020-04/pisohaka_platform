@@ -53,3 +53,10 @@ Create minicube cluster with two pods: web and frontend.
 1. Создал CustomResourceDefinition и CustomResource
 2. Создал оператор
 3. Создал оставшиеся файлы для установки оператора
+
+## HW8
+1. Создал манифесты для Deployment, Service и ServiceMonitor
+2. Создал контейнер с nginx с включенным basic_status
+3. Создал values файл для prometheus-operator
+4. Установил crd, установил prometheus-operator при помощи helm3
+5. Проверил что мониторинг работает
