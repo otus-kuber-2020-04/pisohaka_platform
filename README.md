@@ -60,3 +60,11 @@ Create minicube cluster with two pods: web and frontend.
 3. Создал values файл для prometheus-operator
 4. Установил crd, установил prometheus-operator при помощи helm3
 5. Проверил что мониторинг работает
+
+## HW9
+1. Подготовил k8s cluster в GCP
+2. Установил HipsterShop
+3. Установил и настроил EFK стек
+4. Установил nginx-ingress
+5. Настроил сбор логов nginx-ingress
+6. Установил и настроил Loki
